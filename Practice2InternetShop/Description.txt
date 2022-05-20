@@ -1,0 +1,12 @@
+﻿Solution description
+
+1. Program.cs launches method Main()
+2. Method Main() launches method CreateShoppingList in Client.cs
+3. Method CreateShoppingList creates an array with random list of products (3-10 items)
+4. Then it sends the list to CartService.cs by calling method PlaceInCart
+5. Following the list, CartService.cs picks products according from Products.cs and forms new array of classes.
+-5.1 Product classes contain "price" property
+6. Then CarService sends the list to the OrderService by calling method FormOrder
+7. FormOrder calculates total price and assings an order number
+8. FormOrder calls MessageService
+9. MessageService writes in console "Your order No. 1111 is completed", shows list of ordered products and writes the order into a file
