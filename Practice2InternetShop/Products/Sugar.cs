@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-internal class Pepper
+internal class Sugar
 {
-    public int _article = 6;
-    public string _name = "Pepper";
-    public int _price = 8;
+    public int _article = 9;
+    public string _name = "Sugar";
+    public int _price = 2;
 }

@@ -2,21 +2,47 @@ using System;
 
 public class CartService
 {
-    public Client _item = new Client();
-    _howmany =
-
-
-    public Products[] _itemsincart = new Products[];
-    public void PlaceInCart(int[] productslist)
+    public Client _items = new Client();
+    public int CountLength() // Code not needed
     {
-        foreach (var product in productslist)
+        var lenght = _items._howmany;
+        return lenght;
+    }
+
+    public void PlaceInCart(string[] productslist)
+    {
+        Products[] itemsincart = new Products[productslist.Length];
+        for (int i = 0; i < productslist.Length; i++)
         {
-            var ind = Array.IndexOf(productslist, product);
-            if (product == 1)
-            {
-                Pineapple item = new Pineapple();
-                _itemsincart[ind] = item;
-            }
+            var ind = productslist[i];
+            Products whatprod = new Products();
+            itemsincart[i] = whatprod.GetProduct(ind);
+        }
+
+        Console.WriteLine(" ");
+        Console.WriteLine("The following items were placed in Cart:");
+
+        foreach (var item in itemsincart)
+        {
+            Console.WriteLine($"{item._name} for {item._price}");
+        }
+
+        Console.WriteLine(" ");
+        Console.WriteLine("Do you want to confirm the order? Type 'Yes' to confirm and 'No' to remade");
+        var confirm = Console.ReadLine();
+        if (confirm == "Yes")
+        {
+            OrderService order = new OrderService();
+            order.FormOrder(itemsincart);
+        }
+        else if (confirm == "No")
+        {
+            var client = new Client();
+            client.CreateShoppingList();
+        }
+        else
+        {
+            Console.WriteLine("Error");
         }
     }
 }

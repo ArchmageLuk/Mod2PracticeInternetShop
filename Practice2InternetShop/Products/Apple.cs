@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Practice2InternetShop.Products
+public class Apple
 {
-    internal class Apple
-    {
-    }
+    public int _article = 1;
+    public string _name = "Apple";
+    public int _price = 4;
 }

@@ -7,14 +7,9 @@ using System.Threading.Tasks;
 public class Client
 {
     public int _howmany;
-
-    public Client()
-    {
-        _howmany = new Random().Next(3, 11);
-    }
-
     public void CreateShoppingList()
     {
+        _howmany = new Random().Next(3, 11);
         Console.WriteLine($"Client said: 'I want to buy {_howmany} items:");
         int[] wannabuynums = new int[_howmany];
         for (int i = 0; i < _howmany; i++)
@@ -39,6 +34,6 @@ public class Client
         Console.WriteLine(" ");
 
         CartService initialize = new CartService();
-        initialize.PlaceInCart(wannabuynums);
+        initialize.PlaceInCart(wannabuyitems);
     }
 }
